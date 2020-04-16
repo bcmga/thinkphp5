@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>
+    
+        注册账号_学信网
+    
+    </title>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <link rel="icon" href='https://t1.chei.com.cn/account/favicon.ico' type="image/x-icon" />
+    <link rel="stylesheet" href='__STATIC__/index__/index/css/iconfont.css'/>
+    <link rel="stylesheet" href='__STATIC__/index/css/ui-dialog.css'>
+    <link rel="stylesheet" href='__STATIC__/index/css/account-1.0.0.min.css'>
+    
+    <script src='__STATIC__/index/js/jquery.min.js'></script>
+    <script src="__STATIC__/index/js/jquery.validate.min.js"></script>
+    <script src='__STATIC__/index/js/jqueryloading-1.0.3.js'></script>
+    <script src='__STATIC__/index/js/wap.min.js'></script>
+    <script>
+        if(wapFn()){addFile('css','https://t1.chei.com.cn/account/css/custom/account_wap-1.0.0.min.css?20191028');}
+    </script>
+    
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-100524-4', {'sampleRate': 1});
+    ga('send', 'pageview');
+</script>
+
+</head>
+<body>
+<div class="outer-layer">
+    <div class="outer-layer-content">
+        
+
+
+
+
+
+
+
+
+
+<div class="header">
+    <div class="wrap1180 clearfix">
+        
+        
+            <a href="http://www.chsi.com.cn/" target="_blank"><div class="logo"></div></a>
+            <div class="location"></div>
+        
+        <div class="user-info">
+            
+            
+            
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                    <a class="login-link" href="https://account.chsi.com.cn/passport/login">登录</a>
+                
+                &ensp;|&ensp;
+                
+                    <a class="regist-link" href="https://account.chsi.com.cn/account/preregister.action?from=account-reghead">注册</a>
+                
+             
+        </div>
+    </div>
+</div>
+
+
+    <script>
+    $(function(){
+        var title = $('title').text();
+        title = title.substring(0,title.indexOf('_'));
+        $('.header').find('.location').text(title);
+    })    
+    </script>
+
+
+
+        
+
+
+
+
+
+<h1>学信网 - 邮箱注册</h1>
+<div class="bg">
+    <div class="innter-container clearfix" style="padding-top: 0;">
+        <div class="reg-tab clearfix">
+            <div class="email-reg tab-active">邮箱注册</div>
+            
+                <div id="phone-reg" class="phone-reg"><a href="/account/preregbymphone.action?from=gaokao-zixun">手机号注册</a></div>
+            
+        </div>
+        <div class="form-container">
+            <form id="user_reg_fm" name="user_reg_fm" action="/account/account!newaccount.action" method="post" autocomplete="off">
+                <table>
+                    <tr>
+                        <th class="td-first"><span class="required">*</span>邮箱</th>
+                        <td class='td-input' style="position: relative;">
+                            <input type="hidden" name="loginNameCache" id="loginNameCache" value="" />
+                            <input type="hidden" name="from" value="gaokao-zixun" id="from"/>
+                            <input type="text" name="email" value="" id="email" class="smzc-input"  autocomplete="off"/>
+                        </td>
+                        <td class="validate-tips" id='email-msg'>
+                            
+                                
+                            
+                        </td>
+                    </tr>
+                    <tr>
+                        <th><span class="required">*</span>密码</th>
+                        <td>
+                            <input type="password" name="password" id="password" class="smzc-input"/>
+                        </td>
+                        <td class="validate-tips">
+                            
+                                
+                            
+                        </td>
+                    </tr>
+                    <tr>
+                        <th><span class="required">*</span>密码确认</th>
+                        <td>
+                            <input type="password" name="password1" id="password1" class="smzc-input"/>
+                        </td>
+                        <td class="validate-tips">
+                            
+                                
+                            
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            <span class="required">*</span>验证码
+                        </th>
+                        <td>
+                            <input type="text" name="verify" value="" id="verify" class="smzc-input" autocomplete="off"/>
+                            <div class="captchBlock" id="captchBlock" onclick="changeCapchImage();">
+<!--                                <img id="captchImage" title="看不清换一张" alt="验证码" src=""></img>-->
+                                <img src="{:captcha_src()}" id="verify_img">
+                                <div>看不清楚？点击换一张（字母区分大小写）</div>
+                                <div><a id="kanbuq" href="javascript:refreshVerify();">看不清，换一张</a></div>
+                            </div>
+                        </td>
+                        <td class="validate-tips" style="padding-top: 10px;">
+                            
+                                
+                            
+                        </td>
+                    </tr>
+                    <tr>
+                        <th class='wap-hide'>&nbsp;</th>
+                        <td colspan="2">
+                            <input type="hidden" name="continueurl" value="" id="user_reg_fm_continueurl"/>
+                            <input type="hidden" name="serviceId" value="" id="user_reg_fm_serviceId"/>
+                            <input type="hidden" name="serviceNote_res" id="serviceNote_ajax_res" value="0" />
+                            <label for='serviceNote_yes'>
+                                <input type="checkbox" name="serviceNote" id="serviceNote_yes" value="1" checked='checked' style="margin-bottom: 2px;" />
+                                
+                                    我已阅读并同意<a href="/account/help/agreement.jsp" target="_blank" class="acccept">“服务条款”</a>
+                                
+                                
+                            </label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th class='wap-hide'>&nbsp;</th>
+                        <td colspan="2">
+                            <input type="button" id="newbutton" class="enter-btn" name="newbutton" value="立即开通" /><br>
+                            <a href="/account/password!rtvlgname" target="_blank">找回用户名</a>&ensp;&ensp;<a href="/account/password!retrive" target="_blank">找回密码</a>
+                        </td>
+                    </tr>
+                </table>
+                <div class='content-tips'>
+                    注意：<span class="color999">如果您已经注册过，但是没有收到或者丢失激活邮件，您可以：</span> <a href="/account/getactivatecode.action">重新发送激活邮件</a> 。
+                </div>
+            </form>
+
+
+
+
+        </div>
+    </div>
+</div>
+
+    <script src='__STATIC__/index/js/jquery.pstrength-chsi-2.1.js'></script>
+    <script src='__STATIC__/index/js/automail.js'></script>
+    <script src='__STATIC__/index/js/account-validation-2.1.js'></script>
+
+<script>
+$(function(){
+    clickFn();
+    formValidate('user_reg_fm','newbutton');
+    $('#email').autoMail();
+    $("#password").pstrength();
+    //默认密码强度条隐藏
+    $(".strengthMeter").hide();
+    $("#password").keyup(function(){
+        if($("#password").val() != ""){
+            $(".strengthMeter").show();
+        }else{
+            $(".strengthMeter").hide();
+        }
+    });
+    
+    serviceNote('user_reg_fm','serviceNote_yes','newbutton');
+});
+function clickFn(){
+    $(window.document).bind('click',function(e){
+        var $target = $(e.target);
+        var $cBlock = $('#captchBlock');
+        if($target.is('#captchBlock') ||$target.parent().is('#captchBlock')||$target.is('#captch')){
+            if($cBlock.css('display')=='none'){
+                if($('#captchImage').attr("src") == "" || $('#captchImage').attr("src") == null){
+                    $('#captchImage').attr("src", "https://account.chsi.com.cn/account/captchimagecreateaction.action?time=" + new Date().getTime());
+                }
+                $cBlock.show();        
+            }
+        }else{
+            $cBlock.hide();        
+        }
+    });
+    //切换到手机注册
+    $("#phone-reg").click(function (){
+        window.location.href = "/account/preregbymphone.action?from=" + "gaokao-zixun";
+    });
+    //立即开通按钮
+    $("#newbutton").bind("click", function() {
+        if ($("#user_reg_fm").valid()) {
+            checkLoginName(true);
+        }
+    });
+}
+function changeCapchImage(){
+    $("#captchImage").attr("src","/account/captchimagecreateaction.action?time="+new Date().getTime());
+}
+function checkLoginName(flag) {
+    var flag = flag || false;
+    var s = $("#email").val();
+    if(s == null || s == ''){
+        return false;
+    }
+    $.ajax( {
+        type : "POST",
+        data : {
+            dataInfo : function() {
+                return $("#email").val();
+            },
+            optType : function() {
+                return "REGISTER";
+            }
+        },
+        url : "/account/checkusername.action",
+        success : function(data) {
+            var jsData = eval('(' + data +')');
+             if(jsData.status == 1){
+                 if(flag){
+                    $("#user_reg_fm").submit();
+                 }
+                 return true;
+             } else {
+                 var errorType = jsData.errorType;
+                 errorType = errorType.substr(1,errorType.length);
+                 errorType = errorType.substr(0,errorType.length-1);
+                 var info = jsData.info;
+                 info = info.substr(1,info.length);
+                 info = info.substr(0,info.length-1);
+                 if(errorType == '1'){
+                     var notice1 = '该邮箱已经注册，可直接登录';
+                     $("#email-msg").html(notice1);
+                 }else if(errorType == '2'){
+                     var notice2 = "该邮箱已经注册，正在等待激活 <a href='https://account.chsi.com.cn/account/getactivatecode.action?activateName=" + s + "'>重新发送激活邮件</a>";
+                     $("#email-msg").html(notice2);
+                 }else if( errorType == '4' ){
+                     $("#email-msg").html(info);
+                 }else if( errorType == '5' ){
+                     $("#user_reg_fm").submit();
+                     return true;
+                 }else{
+                     $("#email-msg").html(info);
+                 }
+                 return false;
+             }
+        }
+    });
+}
+
+
+</script>
+
+    </div>
+</div>
+<div class="outer-footer">
+    
+
+
+
+
+
+
+
+
+    
+        
+    
+
+<div class="footerDiv">
+ 
+<a href="http://www.chsi.com.cn/" target="_blank">学信网</a>　　
+<a href="https://account.chsi.com.cn/account/help/index.jsp" target="_blank">帮助中心</a>　　
+<a href="http://www.chsi.com.cn/about/contact.shtml" target="_blank">联系我们</a>　　
+<div class="wap-foot-br"><br></div>
+Copyright © 2003-2019&ensp;学信网&ensp;All Rights Reserved&ensp;&ensp;
+
+
+
+
+
+
+
+
+
+<form class="site-utility-footer-language" id="setlang" action="/account/setlang.action" method="post" style="display:inline">
+    <input type="hidden" name="next" value="">
+    <select class="site-utility-footer-language-select" name="request_locale">
+    
+        <option value ="zh_CN" selected="selected">简体中文</option>
+        <option value ="en_US">English</option>
+    
+    </select>
+</form>
+<script type="text/JavaScript">
+$("select.site-utility-footer-language-select").change(function(){
+    var request_locale = $(this).val()
+    var location = "";
+    
+    var from = '';
+    
+        location = "/account/account!newaccount?from="+from+"&request_locale="+request_locale;
+    
+    if(""==location){
+        $(".site-utility-footer-language").submit();
+    }else{
+        window.location=location;
+    }
+});
+</script>
+</div>
+
+</div>
+<!--自动刷新验证码-->
+<script>
+    function refreshVerify(){
+        var ts = Date.parse(new Date())/1000;
+        $('#verify_img').attr("src", "/captcha?id="+ts);
+    }
+</script>
+<script src='__STATIC__/index/js/dialog-min.js'></script>
+<script src='__STATIC__/index/js/ie-prompt.min.js'></script>
+</body>
+</html>
